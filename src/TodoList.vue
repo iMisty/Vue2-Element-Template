@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="app">
     <div>
       <input type="text" v-model="inputValue"/>
-      <button @click="handleSubmit">提交</button>
+      <button class="btn btn-primary" @click="handleSubmit">提交</button>
     </div>
     <ul>
       <todo-item 
@@ -18,6 +18,7 @@
 
 <script>
 import TodoItem from './components/Todoitem'
+import bootstrap from 'bootstrap'
 
 export default {
   components: {
@@ -42,12 +43,15 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+  margin: 0;
+  padding: 0;
+}
+#app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 </style>
