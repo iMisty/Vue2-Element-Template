@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style>
-
+ul{
+  list-style-type: none;
+  padding: 4vh 0 0 0;
+}
 </style>
