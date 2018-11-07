@@ -1,23 +1,21 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <Todo></Todo>
-    <Footer></Footer>
+    <vHeader/>
+    <Todo/>
+    <vFooter/>
   </div>  
 </template>
 
 <script>
 import header from './components/header'
 import todo from './components/todo'
-import TodoItem from './components/item'
 import footer from './components/footer'
 
 export default {
   components: {
-    'Header': header,
-    'todo-item': TodoItem,
+    'vHeader': header,
     'Todo': todo,
-    'Footer': footer
+    'vFooter': footer
   },
   data () {
     return {

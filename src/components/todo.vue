@@ -78,6 +78,8 @@ export default {
     line-height: 30px;
     text-align: left;
     padding: 8px 0;
+    width: 50%;
+    margin: 0 auto;
 }
 .toggle{
     margin: auto 0;
