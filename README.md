@@ -16,7 +16,7 @@
 
 3. 浏览器部署
 
-> npm start
+> npm run serve
 
 ## 修改内容
 
