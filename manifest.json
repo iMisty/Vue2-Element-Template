@@ -76,7 +76,7 @@
         "title" : "TODO",
         "router" : {
             "mode" : "history",
-            "base" : "/h5/"
+            "base" : ""
         },
         "optimization" : {
             "treeShaking" : {
@@ -84,7 +84,7 @@
             }
         },
         "devServer" : {
-            "https" : true
+            "https" : false
         }
     }
 }
