@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/app.js",
-    "watch": "nodemon --watch ./src/app.ts -e ts,tsx --exec ts-node ./src/app.ts",
+    "watch": "nodemon --watch ./src/*.ts -e ts,tsx --exec ts-node ./src/app.ts",
     "build": "tsc"
   },
   "repository": {
@@ -34,6 +34,8 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "axios": "^0.20.0",
+    "iconv-lite": "^0.6.2",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-cors": "^0.0.16",
