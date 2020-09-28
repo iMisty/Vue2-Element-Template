@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-28 17:24:53
- * @LastEditTime: 2020-09-28 17:31:55
+ * @LastEditTime: 2020-09-28 18:11:33
  * @LastEditors: Miya
  * @Description: Main
- * @FilePath: \Single-Search-API\app.ts
+ * @FilePath: \Single-Search-API\src\app.ts
  * @Version: 1.0
  */
 import * as Koa from 'koa';
@@ -15,6 +15,11 @@ const router = new Router();
 
 router.get('/', async (ctx) => {
   ctx.body = 'hello world';
+});
+
+router.get('/test', async (ctx) => {
+  console.log(ctx.query);
+  ctx.body = ctx.query;
 });
 
 app.use(router.routes());
