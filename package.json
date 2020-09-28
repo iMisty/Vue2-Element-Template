@@ -1,0 +1,37 @@
+{
+  "name": "single-search-api",
+  "version": "1.0.0",
+  "description": "Single Search API",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMisty/Single-Search-API.git"
+  },
+  "keywords": [
+    "koa",
+    "koa2",
+    "api"
+  ],
+  "author": "Miya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iMisty/Single-Search-API/issues"
+  },
+  "homepage": "https://github.com/iMisty/Single-Search-API#readme",
+  "devDependencies": {
+    "@types/koa": "^2.11.4",
+    "@types/koa-cors": "^0.0.0",
+    "@types/koa-router": "^7.4.1",
+    "nodemon": "^1.19.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-cors": "^0.0.16",
+    "koa-router": "^9.4.0"
+  }
+}
