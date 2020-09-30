@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-09-28 21:52:51
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-29 18:26:52
+ * @LastEditTime: 2020-09-30 14:50:02
  * @Description: file content
  * @FilePath: \Single-Search-API\src\util.ts
  */
@@ -11,6 +11,11 @@ import axios from 'axios';
 import iconv = require('iconv-lite');
 // import xml2js = require('xml2js');
 
+/**
+ * @description: 获取百度搜索引擎内容
+ * @param {string}
+ * @return {array}
+ */
 const getBaiduData = async (eng: string, val: string) => {
   let data: any = {};
   await axios({
@@ -28,6 +33,11 @@ const getBaiduData = async (eng: string, val: string) => {
   return data;
 };
 
+/**
+ * @description: 获取必应搜索引擎内容
+ * @param {string}
+ * @return {array}
+ */
 const getBingData = async (eng: string, val: string) => {
   let data: any = {};
   await axios({
@@ -43,6 +53,11 @@ const getBingData = async (eng: string, val: string) => {
   return data;
 };
 
+/**
+ * @description: 获取谷歌搜索引擎内容
+ * @param {string}
+ * @return {array}
+ */
 // export const getGoogleData = async (eng: string, val: string) => {
 //   // let data: any = {};
 //   // console.log(`谷歌搜索开始`);
@@ -71,6 +86,11 @@ const getBingData = async (eng: string, val: string) => {
 //   // return data;
 // };
 
+/**
+ * @description: 返回数组内容
+ * @param {string}
+ * @return {array}
+ */
 export const resultBaiduData = async (eng: string, value: string) => {
   const oldData = await getBaiduData(eng, value);
   const start = oldData.indexOf('s:[') + 3;
@@ -89,12 +109,12 @@ export const resultBingData = async (eng: string, value: string) => {
 };
 
 export const resultGoogleData = async (eng: string, value: string) => {
-  const oldData = await resultBingData(eng, value);
+  const result = await resultBingData(eng, value);
   // const oldData = '[{"suggestion":[{"$":{"data":"1111"}}]},{"suggestion":[{"$":{"data":"11111"}}]},{"suggestion":[{"$":{"data":"11111什么意思"}}]},{"suggestion":[{"$":{"data":"1111 意思"}}]},{"suggestion":[{"$":{"data":"1111人才獵聘"}}]},{"suggestion":[{"$":{"data":"1111大学网"}}]},{"suggestion":[{"$":{"data":"1111星座"}}]},{"suggestion":[{"$":{"data":"1111 angel number"}}]},{"suggestion":[{"$":{"data":"1111商搜"}}]},{"suggestion":[{"$":{"data":"1111=0"}}]}]';
   // const temp = JSON.parse(oldData);
   // const result = temp.map((item: { suggestion: { $: { data: any } }[] }) => {
   //   return item.suggestion[0].$.data;
   // });
   // return result;
-  return oldData;
+  return result;
 };
