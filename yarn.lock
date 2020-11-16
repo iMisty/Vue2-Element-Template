@@ -101,6 +101,13 @@
   dependencies:
     "@types/koa" "*"
 
+"@types/koa2-cors@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@types/koa2-cors/-/koa2-cors-2.0.1.tgz#76a635cadc9c10e9d29a209fa2db28529dfc765a"
+  integrity sha512-8DaO8CkGJGAVWPeODHeGW6T9grKunnfAg0LAyayMrqP/ggPTiHxwrvrk7UJ+NNZ7aQo4Cn0fHSMKhucj+PcquA==
+  dependencies:
+    "@types/koa" "*"
+
 "@types/koa@*", "@types/koa@^2.11.4":
   version "2.11.4"
   resolved "https://registry.yarnpkg.com/@types/koa/-/koa-2.11.4.tgz#8af02a069a9f8e08fa47b8da28d982e652f69cfb"

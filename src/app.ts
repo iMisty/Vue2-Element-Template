@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-28 17:24:53
- * @LastEditTime: 2020-09-30 16:13:31
+ * @LastEditTime: 2020-11-16 16:04:02
  * @LastEditors: Miya
  * @Description: Main
  * @FilePath: \Single-Search-API\src\app.ts
@@ -11,7 +11,8 @@ import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import * as cors from 'koa2-cors';
 import bodyParser = require('koa-bodyparser');
-import { SearchController } from './controller';
+import { SearchController } from './controller/search';
+import { Install } from './controller/install';
 
 const app = new Koa();
 const router = new Router();
@@ -32,6 +33,7 @@ router.get('/', (ctx) => {
 });
 
 router.get('/search', SearchController.getSearchData);
+router.get('/t', Install.install);
 
 app.listen(12451);
 
