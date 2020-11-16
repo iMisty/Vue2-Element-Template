@@ -4,9 +4,8 @@
   "description": "Single Search API",
   "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/app.js",
-    "watch": "nodemon --watch ./src/*.ts -e ts,tsx --exec ts-node ./src/app.ts",
+    "watch": "nodemon --watch ./src/**/*.ts -e ts,tsx --exec ts-node ./src/app.ts",
     "build": "tsc"
   },
   "repository": {
@@ -30,7 +29,9 @@
     "@types/koa-cors": "^0.0.0",
     "@types/koa-router": "^7.4.1",
     "@types/koa2-cors": "^2.0.1",
+    "@types/md5": "^2.2.1",
     "@types/xml2js": "^0.4.5",
+    "mongoose": "^5.10.14",
     "nodemon": "^1.19.4",
     "ts-node": "^7.0.1",
     "typescript": "^3.9.7"
@@ -38,11 +39,15 @@
   "dependencies": {
     "axios": "^0.20.0",
     "iconv-lite": "^0.6.2",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
-    "koa-cors": "^0.0.16",
+    "koa-combine-routers": "^4.0.2",
+    "koa-jwt": "^4.0.0",
     "koa-router": "^9.4.0",
     "koa2-cors": "^2.0.6",
+    "md5": "^2.3.0",
+    "mongoose": "^5.10.14",
     "xml2js": "^0.4.23"
   }
 }
