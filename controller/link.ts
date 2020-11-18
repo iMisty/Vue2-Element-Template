@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-11-17 11:28:09
- * @LastEditTime: 2020-11-17 17:58:52
+ * @LastEditTime: 2020-11-18 11:42:27
  * @LastEditors: Miya
  * @Description: 链接控制
- * @FilePath: \Single-Search-API\src\controller\link.ts
+ * @FilePath: \Single-Search-API\controller\link.ts
  * @Version: 1.0
  */
 
