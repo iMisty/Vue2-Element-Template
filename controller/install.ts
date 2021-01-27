@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-11-16 11:20:54
- * @LastEditTime: 2020-11-16 17:35:07
+ * @LastEditTime: 2021-01-14 10:07:41
  * @LastEditors: Miya
  * @Description: 初始化
- * @FilePath: \Single-Search-API\src\controller\install.ts
+ * @FilePath: \Single-Search-API\controller\install.ts
  * @Version: 1.0
  */
 const fs = require('fs');
@@ -40,7 +40,7 @@ class Install {
     const a = fs.writeFile(db, data, (err: any) => {
       if (err) {
         console.log(err);
-        return ctx.throw(400, { code: 401 });
+        return ctx.throw(400, { code: 400 });
       }
       return (ctx.body = {
         code: 1,
