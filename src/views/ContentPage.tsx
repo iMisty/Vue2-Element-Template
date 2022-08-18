@@ -4,16 +4,16 @@
  * @Author: Mirage
  * @Date: 2022-08-18 10:48:27
  * @LastEditors: Mirage
- * @LastEditTime: 2022-08-18 10:53:20
+ * @LastEditTime: 2022-08-18 16:51:25
  */
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 const ContentPage = defineComponent({
   setup() {
     const tableData = [
       {
         id: 0,
-        name: "test",
+        name: 'test',
       },
     ];
     return { tableData };

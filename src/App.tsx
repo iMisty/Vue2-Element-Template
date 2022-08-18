@@ -4,9 +4,9 @@
  * @Author: Mirage
  * @Date: 2022-07-06 23:18:26
  * @LastEditors: Mirage
- * @LastEditTime: 2022-08-18 10:57:19
+ * @LastEditTime: 2022-08-18 16:49:59
  */
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 const APP = defineComponent({
   render() {

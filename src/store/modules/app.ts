@@ -4,13 +4,13 @@
  * @Author: Mirage
  * @Date: 2022-07-06 23:18:26
  * @LastEditors: Mirage
- * @LastEditTime: 2022-08-18 10:45:38
+ * @LastEditTime: 2022-08-18 16:51:30
  */
-import { defineStore } from "pinia";
-import type { DefineStoreOptions } from "pinia";
+import { defineStore } from 'pinia';
+import type { DefineStoreOptions } from 'pinia';
 
 export const useAppStore = defineStore({
-  id: "app",
+  id: 'app',
   state: () => ({
     isOk: true,
   }),

@@ -1,3 +1,11 @@
+/*
+ * @Description: Vetur Config
+ * @Version: 1.0
+ * @Author: Mirage
+ * @Date: 2022-08-18 16:06:19
+ * @LastEditors: Mirage
+ * @LastEditTime: 2022-08-18 16:51:53
+ */
 // vetur.config.js
 // https://github.com/vuejs/vetur/issues/2296#issuecomment-1155957974
 module.exports = {
@@ -17,4 +25,4 @@ module.exports = {
     'vetur.trace.server': 'off',
     'vetur.underline.refValue': false,
   },
-}
+};
