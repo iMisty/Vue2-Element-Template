@@ -1,144 +1,135 @@
-# Kagura-Vue3-template
+# Vue 2.7 + Vite
+> vue2.7 + vue-router3 + pinia
+> 示例代码: https://github.com/klren0312/vite_vue2.7
+> 示例页面: https://klren0312.github.io/vite_vue2.7/
 
-<p align="center">
-<img src="https://img.shields.io/github/license/iMisty/Vue3-Element-Template" alt="License"/>
-<img src="https://img.shields.io/badge/vue-3.2-blue" alt="Vue"/>
-</p>
+## 用到的vite插件
 
-// TBD
+ - @vitejs/plugin-vue2 vite的vue2.7插件
+ - @vitejs/plugin-legacy 打包支持IE
+ - unplugin-vue-components 按需引入插件
 
-English | 简体中文 | 日本語
 
-## Status
+## 相关配置
 
-> Coding
+### 1. vscode的vetur插件适配
+>参考资料: https://github.com/vuejs/vetur/issues/2296#issuecomment-1155957974
 
-## Overview
+需要在根目录创建`vetur.config.js`
 
-// TODO
-
-## Build Setup
-
-// TODO
-
-## Build Production Mode
-
-### Build System
-
-> yarn build:prod
-
-or
-
-> npm run build:prod
-
-### Build Documents
-
-> yarn docs:build
-
-or
-
-> npm run docs:build
-
-## Documentation
-
-// TODO
-
-## Screenshot
-
-// TODO
-
-## Feature
-
-// TODO
-
-## Use Library and Framework
-
-### Base
-
-[Vue 3](https://vuejs.org/): Base Framework
-
-[vue-router](https://router.vuejs.org/): Router
-
-[Pinia](https://pinia.vuejs.org/): Substitute Vuex
-
-[Vue-i18n](https://kazupon.github.io/vue-i18n/): Multi Language Support
-
-[axios](https://github.com/axios/axios): AJAX Base
-
-[Typescript](https://www.typescriptlang.org/): Based for Code
-
-[Element-plus](https://element-plus.org/en-US/): UI Framework Base
-
-[less](https://lesscss.org/): CSS Style
-
-### Extends
-
-[nprogress](https://ricostacruz.com/nprogress/): Progress Bar
-
-[vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons): Used to generate svg sprite map
-
-[idb-keyval](https://github.com/jakearchibald/idb-keyval): A Simple Promise-Based key-val Store Implemented with IndexedDB
-
-[@miramiya/request](https://github.com/iMisty/Kagura-axios-request): Axios Encapsulation Library
-
-## Preparation
-
-You need to install [Node](http://nodejs.org/) and [Git](https://git-scm.com/) locally. The project is based on [Typescript](https://www.typescriptlang.org/), [Vue 3](https://vuejs.org/), [Pinia](https://pinia.vuejs.org/), [vue-router](https://router.vuejs.org/), [axios](https://github.com/axios/axios) and [Element-plus](https://element-plus.org/en-US/).
-Understanding and learning these knowledge in advance will greatly help you on using this project.
-
-## Project Structure
-
-```bash
-├── public
-│   │── favicon.ico
-├── docs
-│   ├── .vitepress
-│   ├── assets
-│   ├── components
-├── src
-│   ├── api
-│   ├── assets
-│   ├── components
-│   ├── config
-│   ├── directives
-│   ├── filters
-│   ├── interface
-│   ├── language
-│   ├── layout
-│   ├── router
-│   ├── store
-│   ├── style
-│   ├── utils
-│   ├── views
-│   ├── App.tsx
-│   ├── main.ts
-│   ├── permission.ts
-│   └── env.d.ts
-│── .env.development
-│── .env.production
-│── .eslintrc.cjs
-│── .prettierrc.json
-│── index.html
-│── package.json
-│── README.md
-│── README-ZH.md
-│── README-JP.md
-│── shims-vue.d.ts
-│── tsconfig.json
-│── vite.config.ts
-│── yarn.lock
+```js
+// vetur.config.js
+module.exports = {
+  settings: {
+    'vetur.completion.autoImport': false,
+    'vetur.experimental.templateInterpolationService': false,
+    'vetur.validation.interpolation': false,
+    'vetur.validation.template': false,
+    'vetur.validation.templateProps': false,
+    'vetur.validation.style': false,
+    'vetur.validation.script': false,
+    'vetur.format.enable': false,
+    'vetur.ignoreProjectWarning': true,
+    'vetur.languageFeatures.codeActions': false,
+    'vetur.languageFeatures.semanticTokens': false,
+    'vetur.languageFeatures.updateImportOnFileMove': false,
+    'vetur.trace.server': 'off',
+    'vetur.underline.refValue': false,
+  },
+}
 ```
 
-## Browsers support
+或者改用`volar`插件
+![](./docImages/usevolar.png)
 
-Modern Browsers
+### 2. vite适配vue2.7
+> 参考资料: https://github.com/vuejs/vue/blob/main/CHANGELOG.md#vue-cli--webpack
 
-> Attention: Not Support Internet Explorer
+使用官方的[`@vitejs/plugin-vue2`插件](https://github.com/vitejs/vite-plugin-vue2)
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Edge                                                                                                                                                                                                  | last 4 versions                                                                                                                                                                                                   | last 4 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                               |
+vite创建vue项目后, 把插件替换下就行了
 
-### License
+### 3. vue-router安装
+vue2应该只支持vue-router3版本
 
-MIT License
+### 4. pinia安装
+> 按官方文档引入即可: https://pinia.vuejs.org/getting-started.html#installation
+
+```js
+import { createPinia, PiniaVuePlugin } from 'pinia'
+
+Vue.use(PiniaVuePlugin)
+const pinia = createPinia()
+
+new Vue({
+  el: '#app',
+  // other options...
+  // ...
+  // note the same `pinia` instance can be used across multiple Vue apps on
+  // the same page
+  pinia,
+})
+```
+
+### 5. element-ui按需引入
+使用[`unplugin-vue-components`插件](https://github.com/antfu/unplugin-vue-components)
+
+- 💚 Vue 2 和 Vue 3 开箱即用
+- ✨ 支持组件和指令.
+- ⚡️ 支持 Vite, Webpack, Vue CLI, Rollup, esbuild 等打包工具, powered by <a href="https://github.com/unjs/unplugin">unplugin</a>.
+- 🏝 Tree-shakable,只注册引用的组件.
+- 🪐 文件夹名称作为命名空间.
+- 🦾 ts支持.
+- 🌈 [内置解析器](#importing-from-ui-libraries) 支持主流的UI库.
+- 😃 对 [unplugin-icons](https://github.com/antfu/unplugin-icons)支持友好.
+
+使用方法(element-ui为例):
+
+```js
+import Components from 'unplugin-vue-components/vite'
+import { ElementUiResolver } from 'unplugin-vue-components/resolvers'
+export default defineConfig({
+  plugins: [
+    Components({
+      resolvers: [ElementUiResolver()],
+    }),
+  ],
+})
+```
+
+### 6. 打包后支持ie11
+使用[`@vitejs/plugin-legacy`插件](https://github.com/vitejs/vite/blob/main/packages/plugin-legacy/README.md)
+
+```js
+import legacy from '@vitejs/plugin-legacy'
+export default defineConfig({
+  plugins: [
+    legacy({
+      targets: ['defaults', 'not ie < 9'],
+    }),
+  ],
+})
+```
+
+### 7. 分离打包
+> 参考资料: https://cn.vitejs.dev/guide/build.html#chunking-strategy
+
+```js
+import { splitVendorChunkPlugin } from 'vite'
+export default defineConfig({
+  plugins: [
+    splitVendorChunkPlugin(),
+  ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'element-ui': ['element-ui'],
+        },
+      },
+    },
+  },
+})
+```
+
+

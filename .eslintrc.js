@@ -1,18 +1,23 @@
+/*
+ * @Description: ESLint Config
+ * @Version: 1.0
+ * @Author: Mirage
+ * @Date: 2022-07-06 10:42:07
+ * @LastEditors: Mirage
+ * @LastEditTime: 2022-08-18 11:12:51
+ */
 module.exports = {
-  parser: "vue-eslint-parser",
-  parserOptions: {
-    parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
-    sourceType: "module", // Allows for the use of imports
-    ecmaFeatures: {
-      // Allows for the parsing of JSX
-      jsx: true,
-    },
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
   },
-  extends: [
-    "plugin:vue/vue3-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["airbnb"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint"],
   rules: {},
 };

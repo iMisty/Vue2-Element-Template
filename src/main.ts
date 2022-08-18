@@ -2,50 +2,23 @@
  * @Description: Main Config
  * @Version: 1.0
  * @Author: Mirage
- * @Date: 2021-11-26 10:33:44
+ * @Date: 2022-07-06 23:18:26
  * @LastEditors: Mirage
- * @LastEditTime: 2022-08-17 18:10:28
+ * @LastEditTime: 2022-08-18 10:57:41
  */
+import Vue from "vue";
+import App from "./App";
+import { createPinia, PiniaVuePlugin } from "pinia";
+import router from "./router";
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
 
-/**
- * Import Node Modules
- */
-import Vue from 'vue';
-import { createPinia, PiniaVuePlugin } from 'pinia'
-import ElementPlus from 'element-ui';
-/**
- * Import Config File
- */
-import router from './router/index';
-import i18n from './language/index';
-/**
- * Import Node Modules Style
- */
-// import 'element-ui/dist/index.css';
-
-/**
- * Import Custom Style
- */
-// Global APP Style
-import './style/app.module.less';
-// Normalize.css
-import './style/normalize.less';
-// Animation and Transition CSS
-import './style/transition.less';
-// Change Element Plus CSS
-import './style/elementChange.less';
-
-/**
- * Import Root Component
- */
-import App from './App.vue'
-
-
-Vue.use(PiniaVuePlugin)
-const pinia = createPinia()
+Vue.use(PiniaVuePlugin);
+Vue.use(ElementUI);
+const pinia = createPinia();
 
 new Vue({
   render: (h) => h(App),
   pinia,
   router,
-}).$mount('#app')
+}).$mount("#app");

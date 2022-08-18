@@ -1,58 +1,44 @@
 /*
  * @Description: Vite Config
- * @Version: 2.1
+ * @Version: 1.0
  * @Author: Mirage
- * @Date: 2021-11-26 10:33:44
+ * @Date: 2022-07-06 23:18:26
  * @LastEditors: Mirage
- * @LastEditTime: 2022-08-17 17:59:54
+ * @LastEditTime: 2022-08-18 11:54:21
  */
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import path from 'path';
-import vue from '@vitejs/plugin-vue2';
-import vueI18n from '@intlify/vite-plugin-vue-i18n';
-import legacy from '@vitejs/plugin-legacy';
-import Gzip from 'vite-plugin-compression';
-// import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import { defineConfig, splitVendorChunkPlugin } from "vite";
+import vue from "@vitejs/plugin-vue2";
+import vueJSX from "@vitejs/plugin-vue2-jsx";
+import legacy from "@vitejs/plugin-legacy";
+// import Components from "unplugin-vue-components/vite";
+// import { ElementUiResolver } from "unplugin-vue-components/resolvers";
+// import GZip from 'vite-plugin-compression'
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-    Gzip({
-      verbose: true,
-      disable: false,
-      threshold: 10240,
-      algorithm: 'gzip',
-      ext: '.gz',
-    }),
-    splitVendorChunkPlugin(),
-    // createSvgIconsPlugin({
-    //   iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-    //   symbolId: 'icon-[dir]-[name]',
+    // @ts-ignore
+    vueJSX(),
+    // @ts-ignore
+    // GZip({
+    //   verbose: true,
+    //   disable: false,
+    //   threshold: 10240,
+    //   algorithm: 'gzip',
+    //   ext: '.gz',
     // }),
-    /**
-     * https://github.com/intlify/vue-i18n-next/issues/789
-     * https://blog.csdn.net/yjl13598765406/article/details/125498134
-     */
-    vueI18n({
-      include: path.resolve(__dirname, './path/to/src/locales/**'),
-    }),
+    splitVendorChunkPlugin(),
     legacy({
-      targets: ['defaults', 'not ie < 9'],
+      targets: ["defaults", "not ie < 9"],
     }),
+    // Components({
+    //   dirs:['src'],
+    //   resolvers: [ElementUiResolver()],
+    // }),
+
   ],
-  base: './',
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      assets: path.resolve(__dirname, 'assets'),
-      components: path.resolve(__dirname, 'components'),
-      config: path.resolve(__dirname, 'config'),
-      store: path.resolve(__dirname, 'store'),
-      utils: path.resolve(__dirname, 'utils'),
-      'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
-    },
-  },
   build: {
     terserOptions: {
       /**
@@ -68,16 +54,27 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'element-ui': ['element-ui'],
+          "element-ui": ["element-ui"],
         },
       },
     },
-    minify: 'terser',
+    minify: "terser",
   },
+
+  resolve: {
+    alias: [
+      // /@/xxxx => src/xxxx
+      {
+        find: /\@\//,
+        replacement: path.resolve("src") + "/",
+      },
+    ],
+  },
+
   css: {
     modules: {
-      generateScopedName: 'miya__[name]__[hash:base64:4]',
-      hashPrefix: 'prefix',
+      generateScopedName: "miya__[name]__[hash:base64:4]",
+      hashPrefix: "prefix",
     },
     preprocessorOptions: {
       /**
@@ -93,15 +90,15 @@ export default defineConfig({
   },
 
   server: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 12460,
     open: true,
     https: false,
     proxy: {
-      '/api': {
+      "/api": {
         // target: 'http://jsonplaceholder.typicode.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
