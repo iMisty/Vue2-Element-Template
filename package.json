@@ -9,6 +9,8 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@miramiya/request": "^1.1.6",
+    "axios": "^0.27.2",
     "element-ui": "^2.15.9",
     "pinia": "^2.0.14",
     "vue": "^2.7.0",
